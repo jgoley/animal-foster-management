@@ -33,3 +33,9 @@ stylus@2.513.9
 http@1.2.12
 meteorhacks:aggregate
 shell-server@0.2.3
+accounts-base
+accounts-ui
+accounts-password
+useraccounts:bootstrap
+twbs:bootstrap
+std:accounts-bootstrap
