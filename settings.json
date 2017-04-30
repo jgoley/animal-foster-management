@@ -1,0 +1,7 @@
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "mongodb://jgoley:YrVAmlSSM5knCtlBrFmfha1eakNEhK@ds049935.mlab.com:49935/csr"
+    }
+  }
+}
