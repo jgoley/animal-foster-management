@@ -41,3 +41,38 @@ header
 
 section
   padding 30px 5% 30px 5%
+
+.flex
+  display flex
+  align-items center
+
+.animal-label
+  font-size 1.5em
+
+.selection
+  color #333
+  text-decoration none
+  line-height 1
+  display flex
+  align-items center
+  cursor pointer
+  &::before
+    content '\f05d'
+    font-family 'FontAwesome'
+    font-size 2em
+    line-height 1
+    margin-right .5em
+    cursor pointer
+    transition .3s
+    color #CCC
+  &.checked
+  &.selected
+    &
+    &::before
+      color green
+      transition .2s
+  &:hover
+    text-decoration none
+    &::before
+      transform scale(1.2)
+      transform-origin center

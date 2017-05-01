@@ -1,13 +1,14 @@
 import React from 'react'
 import { Meteor } from 'meteor/meteor'
 import { Link } from 'react-router'
-import AnimalListItem from './animalListItem'
+import FosterContainer from '../containers/fosterContainer'
+import FosterList from './fosterList'
 
-export default class AnimalList extends React.Component {
+export default class FosterLists extends React.Component {
   listItems() {
     let items = []
     this.props.animals.forEach((animal, i)=>{
-      items.push(<AnimalListItem animal={animal} key={i} />)
+      items.push(<FosterContainer animal={animal} key={i} />)
     })
     return items
   }
@@ -22,5 +23,6 @@ export default class AnimalList extends React.Component {
         </div>
       )
     } else return (<h1>Loading</h1>)
+
   }
 }

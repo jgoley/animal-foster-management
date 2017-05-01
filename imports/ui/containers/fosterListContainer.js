@@ -1,10 +1,12 @@
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
+import Animals from '../../api/animals/index';
+import FosterLists from '../components/fosterLists'
 
 export default createContainer(({ params })=> {
   let query = params.query || {}
-  Meteor.subscribe('usersWilling', query);
+  Meteor.subscribe('animals')
   return {
-    fosters: Meteor.users.find(query).fetch()
+    animals: Animals.find().fetch()
   }
-}, )
+}, FosterLists)
