@@ -7,6 +7,7 @@ import AnimalList from '../../ui/components/animalList'
 import AnimalContainer from '../../ui/containers/animalContainer'
 import FosterListContainer from '../../ui/containers/fosterListContainer'
 import FosterContainer from '../../ui/containers/fosterContainer'
+import SignIn from '../../ui/components/signIn'
 import { Accounts } from 'meteor/std:accounts-ui'
 
 Meteor.startup(() => {
@@ -17,7 +18,7 @@ Meteor.startup(() => {
         <Route path='/admin' component={FosterListContainer} >
           <IndexRoute component={FosterContainer} />
         </Route>
-        <Route path="/signin" component={() => <Accounts.ui.LoginForm />} />
+        <Route path="/signin" component={() => <SignIn />} />
       </Route>
     </Router>
   ), document.getElementById('app') )

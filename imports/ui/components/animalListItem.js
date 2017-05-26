@@ -24,11 +24,15 @@ export default class AnimalListItem extends React.Component {
   }
 
   render() {
+    let type = this.props.animal.type
     return (
       <li className='flex'>
         <a className={this.state.checked ? 'selection checked' : 'selection'}
-           onClick={_.debounce(this.setAnimalPref.bind(this), 100)}>
-          <span className='animal-label'>{this.props.animal.type}</span>
+           onClick={_.throttle(this.setAnimalPref.bind(this), 100)}>
+          <span>
+            <h1 className='animal-label'>{type}</h1>
+            <span className={`icon-${ type.toLowerCase() }`}></span>
+          </span>
         </a>
       </li>
     )

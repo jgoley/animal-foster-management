@@ -1,50 +1,60 @@
-body
-  font-family 'Open Sans', sans-serif
-  margin 0
-  padding 0
-
-ul
-  margin 0
-  padding 0
-  li
-    margin-bottom 1em
-    list-style none
-    margin 0 0 1.2em 0
-    p
-      margin 0
-
-a
-  text-decoration none
-  color #AC2A1A
-  &:hover
-    color #3B6378
-
-h1
-h2
-h3
-  margin 0
-
 header
-  background #f9f9f9
-  padding .25em 5%
+  background $primary
+  padding .75em 5%
   display flex
   align-items center
+  color white
   nav
     margin-left auto
   ul
     list-style none
     margin 0
+    display flex
+    flex-direction row
   li
     margin 0
+    &:not(:last-of-type)
+      margin-right 1.5em
   h1
     font-size 2em
+    color white
+    flex 1 1 50%
+  a
+    color white
+    &:hover
+      color darken($primary, 80%)
+      text-decoration none
 
 section
   padding 30px 5% 30px 5%
 
+.selection-wrapper
+  p
+    text-align center
+    margin 0 auto 3em auto
+    max-width 95%
+    +above($tablet)
+      max-width 50%
+
+.animals
+  display flex
+  align-items center
+  flex-wrap wrap
+
 .flex
   display flex
   align-items center
+  justify-content center
+  min-width 100%
+  margin-bottom 5em
+  +above($mobile)
+    min-width 50%
+  +above($tablet)
+    min-width 25%
+  &:last-of-type
+    a
+      &::before
+        margin 0
 
 .animal-label
   font-size 1.5em
@@ -56,23 +66,150 @@ section
   display flex
   align-items center
   cursor pointer
+  font-size 1.5em
+  +above($tablet)
+    font-size 1.2em
   &::before
-    content '\f05d'
+    content '\f10c'
     font-family 'FontAwesome'
-    font-size 2em
+    font-size 5em
     line-height 1
-    margin-right .5em
+    margin-right .15em
     cursor pointer
     transition .3s
-    color #CCC
+    color $body-text
   &.checked
   &.selected
+    &::before
+      content '\f05d'
     &
     &::before
-      color green
-      transition .2s
+    h1
+    span::before
+      color $primary
+      transition .15s
   &:hover
     text-decoration none
     &::before
+      content '\f05d'
       transform scale(1.2)
       transform-origin center
+  > span
+    display flex
+    flex-direction column-reverse
+    align-items center
+    span
+      font-size 8em
+      margin-bottom 10px
+
+.btn
+  padding-right 1.5em
+  padding-left 1.5em
+
+.foster-list
+  display flex
+  flex-wrap wrap
+  +above($tablet)
+    flex-wrap nowrap
+  > li
+    min-width 100%
+    padding 0 .75em
+    margin-bottom 2em
+    +above($mobile)
+      min-width 50%
+    +above($tablet)
+      min-width 25%
+    &:first-of-type
+      padding-left 0
+    &:last-of-type
+      padding-right 0
+    section
+      display flex
+    &.toggled
+      img
+      span
+        opacity .5
+      ul
+        display none
+      header
+        h1
+        nav
+          opacity .5
+  [class^="icon-"]
+  [class*=" icon-"]
+    margin-bottom 15px
+    font-size 7em
+    display block
+  header
+    padding 0
+    margin-bottom .5em
+    padding-bottom .25em
+    border-bottom 3px solid white
+    display flex
+    background none
+    color $body-text
+    h1
+      color $body-text
+      cursor pointer
+      &:hover
+        color $primary
+    nav
+      display flex
+      justify-content flex-end
+      margin-left auto
+      align-self stretch
+    a
+      font-size 1.25em
+      background white
+      align-self stretch
+      margin-bottom -.25em
+      padding-left 15px
+      padding-right 15px
+      display flex
+      align-items center
+      color $secondary
+      &:hover
+        color $primary
+    span
+      margin-left auto
+      align-self center
+      margin-right .75em
+
+.foster
+  margin-bottom .5em
+  margin-right 0
+  background white
+  border-radius 1px
+  align-items center
+  a
+    padding 15px
+    display flex
+    flex 1
+    span
+      max-width 90%
+      overflow hidden
+      text-overflow ellipsis
+      white-space nowrap
+      color #444
+    &:hover
+      text-decoration none
+      span
+      i
+        color $primary
+    i
+      color darken(#f9f9f9, 10%)
+      margin-left auto
+
+.toggle
+  margin-right .25em
+
+.credit
+  text-align center
+  font-size .8em
+  a
+  &
+    color #CCC
+
+footer
+  width 100%
+  display block

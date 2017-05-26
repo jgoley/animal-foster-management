@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { HTTP } from 'meteor/http'
 import Animals from '../../api/animals/index'
+import { Roles } from 'meteor/alanning:roles'
 
 let animals = [
   {

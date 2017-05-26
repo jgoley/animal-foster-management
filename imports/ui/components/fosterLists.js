@@ -17,7 +17,7 @@ export default class FosterLists extends React.Component {
     if(this.props.animals) {
       return (
         <div>
-          <ul>
+          <ul className='foster-list'>
             {this.listItems()}
           </ul>
         </div>
